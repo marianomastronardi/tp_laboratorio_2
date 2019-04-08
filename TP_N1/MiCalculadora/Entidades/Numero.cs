@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 
 namespace Entidades
 {
@@ -28,7 +29,7 @@ namespace Entidades
             this.numero = numero;
         }
 
-        Numero(string numero) 
+        Numero(string numero)
         {
             //this.numero = numero;
             //como puedo entrar por SetNumero????
@@ -66,27 +67,57 @@ namespace Entidades
             int bit = 0;
             int i = 0;
 
-            while(isNumber && i < numero.Length)
+            while (isNumber && i < numero.Length)
             {
                 isNumber = int.TryParse(numero.Substring(i, 1), out bit);
+                if (!isNumber)
+                    break;
                 ret += (bit * (int)Math.Pow(2, i));
                 i++;
             }
-           
-            return ret.ToString();
+
+            return isNumber ? ret.ToString() : "Valor Inválido";
         }
 
         string DecimalBinario(double numero)
         {
-            return Math.Abs((double)numero).ToString();
+            return this.DecimalBinario(numero.ToString());
         }
 
         string DecimalBinario(string numero)
         {
-            //Numero n;
-            //n.numero = numero;
-            //return Math.Abs((double)numero).ToString();
-            return numero;
+            int cociente;
+            StringCollection restos = new StringCollection();
+            bool isNumber = int.TryParse(numero, out cociente);
+
+            if (isNumber)
+            {
+                //guardo en la coleccion los restos
+                while (cociente < 2)
+                {
+                    restos.Add((cociente % 2).ToString());
+                }
+
+                //recorro el stringCollection de atras para adelante
+                StringEnumerator eRestos = restos.GetEnumerator();
+                int i = restos.Count - 1;
+                string[] ret = new string[i];
+
+                //dejo los items en mi array
+                while (eRestos.MoveNext())
+                {
+                    ret[i] = eRestos.Current;
+                    i--;
+                }
+
+                //ahora devuelvo el numero convertido a binario
+                for (int j = 0; i < ret.Length; j++)
+                {
+                    numero += ret[j];
+                }
+            }
+
+            return isNumber ? numero : "Valor Inválido";
         }
 
         double ValidarNumero(string strNumero)
