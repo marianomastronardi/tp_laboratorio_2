@@ -28,10 +28,26 @@ namespace Entidades
             this.numero = numero;
         }
 
-        //Numero(string numero)
-        //{
-        //    this.numero = this.SetNumero;
-        //}
+        Numero(string numero) 
+        {
+            //this.numero = numero;
+            //como puedo entrar por SetNumero????
+        }
+
+        public static explicit operator double(Numero n)
+        {
+            return n.numero;
+        }
+
+        public static explicit operator int(Numero n)
+        {
+            return (int)n.numero;
+        }
+
+        public static explicit operator string(Numero n)
+        {
+            return n.numero.ToString();
+        }
 
         string BinarioDecimal(double numero)
         {
@@ -43,7 +59,21 @@ namespace Entidades
             //Numero n;
             //n.numero = numero;
             //return Math.Abs((double)numero).ToString();
-            return numero;
+
+            //Declaro un array can tantos elementos como carateres tenga el parametro numero
+            int ret = 0;
+            bool isNumber = true;
+            int bit = 0;
+            int i = 0;
+
+            while(isNumber && i < numero.Length)
+            {
+                isNumber = int.TryParse(numero.Substring(i, 1), out bit);
+                ret += (bit * (int)Math.Pow(2, i));
+                i++;
+            }
+           
+            return ret.ToString();
         }
 
         string DecimalBinario(double numero)
