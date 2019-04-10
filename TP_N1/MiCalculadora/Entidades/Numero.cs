@@ -4,20 +4,11 @@ using System.Collections.Specialized;
 namespace Entidades
 {
   /*
-3.  El atributo numero es privado.
-4. El constructor por defecto (sin parámetros) asignará valor 0 al atributo numero.
-5. ValidarNumero comprobará que el valor recibido sea numérico, y lo retornará en
-formato double. Caso contrario, retornará 0.
-6. La propiedad SetNumero asignará un valor al atributo número, previa validación.
-En este lugar será el único en todo el código que llame al método ValidarNumero.
 7. Los métodos BinarioDecimal y DecimalBinario trabajaran con enteros positivos,
 quedándose para esto con el valor absoluto y entero del double recibido:
-a. El método BinarioDecimal convertirá un número binario a decimal, en caso
-de ser posible. Caso contrario retornará "Valor inválido".
 b. Ambas opciones del método DecimalBinario convertirán un número decimal
 a binario, en caso de ser posible. Caso contrario retornará "Valor inválido".
 Reutilizar código.
-8. Los operadores realizarán las operaciones correspondientes entre dos números.
      */
   public class Numero
   {
@@ -71,26 +62,28 @@ Reutilizar código.
 
     public string BinarioDecimal(string numero)
     {
-      //Numero n;
-      //n.numero = numero;
-      //return Math.Abs((double)numero).ToString();
-
       //Declaro un array can tantos elementos como carateres tenga el parametro numero
       int ret = 0;
       bool isNumber = true;
+      bool isBinary = numero.Replace("0", "").Replace("1", "").Length == 0;
       int bit = 0;
       int i = 0;
+      int j = numero.Length - 1;
 
-      while (isNumber && i < numero.Length)
+      if(isNumber && isBinary)
       {
-        isNumber = int.TryParse(numero.Substring(i, 1), out bit);
-        if (!isNumber)
-          break;
-        ret += (bit * (int)Math.Pow(2, i));
-        i++;
+        while (i < numero.Length)
+        {
+          isNumber = int.TryParse(numero.Substring(i, 1), out bit);
+          if (!isNumber)
+            break;
+          ret += (bit * (int)Math.Pow(2, j));
+          i++;
+          j--;
+        }
       }
-
-      return isNumber ? ret.ToString() : "Valor Inválido";
+      
+      return (isNumber && isBinary) ? ret.ToString() : numero;
     }
 
     public string DecimalBinario(double numero)
@@ -140,7 +133,7 @@ Reutilizar código.
 
     double ValidarNumero(string strNumero)
     {
-      double ret = double.MinValue;
+      double ret = 0;
 
       return double.TryParse(strNumero, out ret) ? double.Parse(strNumero) : ret;
     }

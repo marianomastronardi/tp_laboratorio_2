@@ -37,17 +37,17 @@ namespace MiCalculadora
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnConvertirABinario = new System.Windows.Forms.Button();
             this.btnConvertirADecimal = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblResultado
             // 
-            this.lblResultado.AutoSize = true;
             this.lblResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultado.Location = new System.Drawing.Point(309, 9);
+            this.lblResultado.Location = new System.Drawing.Point(45, 9);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 29);
+            this.lblResultado.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblResultado.Size = new System.Drawing.Size(424, 29);
             this.lblResultado.TabIndex = 0;
+            this.lblResultado.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // txtNumero1
             // 
@@ -127,20 +127,11 @@ namespace MiCalculadora
             this.btnConvertirADecimal.UseVisualStyleBackColor = true;
             this.btnConvertirADecimal.Click += new System.EventHandler(this.btnConvertirADecimal_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(59, 267);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
-            // 
             // FormCalculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 300);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnConvertirADecimal);
             this.Controls.Add(this.btnConvertirABinario);
             this.Controls.Add(this.btnCerrar);
@@ -154,6 +145,7 @@ namespace MiCalculadora
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCalculadora";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculadora de Mariano Garcia Mastronardi del curso 2ºD";
             this.Load += new System.EventHandler(this.FormCalculadora_Load);
             this.ResumeLayout(false);
@@ -172,7 +164,6 @@ namespace MiCalculadora
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnConvertirABinario;
         private System.Windows.Forms.Button btnConvertirADecimal;
-    private System.Windows.Forms.ComboBox comboBox1;
   }
 }
 

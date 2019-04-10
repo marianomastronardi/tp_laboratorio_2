@@ -16,6 +16,7 @@ namespace MiCalculadora
     public FormCalculadora()
     {
       InitializeComponent();
+      lblResultado.TextAlign = ContentAlignment.MiddleRight;
     }
 
     private void FormCalculadora_Load(object sender, EventArgs e)
@@ -32,13 +33,22 @@ namespace MiCalculadora
     private void btnConvertirABinario_Click(object sender, EventArgs e)
     {
       Numero n = new Numero();
-      lblResultado.Text = n.DecimalBinario(lblResultado.Text);
+      double decToBin;
+
+      if (double.TryParse(lblResultado.Text, out decToBin))
+      {
+        decToBin = (int)decToBin;
+        lblResultado.Text = n.DecimalBinario(decToBin.ToString());
+      }
     }
 
     private void btnConvertirADecimal_Click(object sender, EventArgs e)
     {
       Numero n = new Numero();
-      lblResultado.Text = n.BinarioDecimal(lblResultado.Text);
+      int binToDec;
+
+      if (int.TryParse(lblResultado.Text, out binToDec))
+        lblResultado.Text = n.BinarioDecimal(binToDec.ToString());
     }
 
     private void btnLimpiar_Click(object sender, EventArgs e)
@@ -48,7 +58,11 @@ namespace MiCalculadora
 
     private void btnOperar_Click(object sender, EventArgs e)
     {
-      lblResultado.Text = Convert.ToInt32(Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.SelectedItem.ToString())).ToString();
+      double res = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.SelectedItem.ToString());
+      if (res == double.MinValue)
+        lblResultado.Text = "No se puede dividir por 0";
+      else
+        lblResultado.Text = Math.Round(res, 2).ToString();
     }
 
     private void Limpiar()
