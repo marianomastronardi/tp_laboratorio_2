@@ -1,9 +1,16 @@
-﻿namespace Entidades
+namespace Entidades
 {
-    static class Calculadora
+   public static class Calculadora
     {
 
-        static double Operar(Numero numero1, Numero numero2, string operador)
+    /*
+    1. El método ValidarOperador será privado y estático. Deberá validar que el operador
+    recibido sea +, -, / o *. Caso contrario retornará +.
+    2. El método Operar será de clase:
+    a. Validará y realizará la operación pedida entre ambos números.
+    b. Si se tratara de una división por 0, retornará double.MinValue.
+    */
+     public static double Operar(Numero numero1, Numero numero2, string operador)
         {
             double ret;
 
@@ -11,22 +18,22 @@
 
             if (operador == "+")
             {
-                ret = (double)numero1 + (double)numero2;
+                ret = numero1 + numero2;
             }
             else if (operador == "-")
             {
-                ret = (double)numero1 - (double)numero2;
+                ret = numero1 - numero2;
             }
             else if (operador == "*")
             {
-                ret = (double)numero1 * (double)numero2;
+                ret = numero1 * numero2;
             }
             else  //division
             {
-                if ((double)numero2 == 0)
+               /* if (numero2 == 0)
                     ret = double.MinValue;
                 else
-                    ret = ((double)numero1 / (double)numero2);
+                 */   ret = (numero1 / numero2);
                 
             }
             return ret;

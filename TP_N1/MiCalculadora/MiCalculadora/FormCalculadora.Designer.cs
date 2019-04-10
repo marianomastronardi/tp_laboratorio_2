@@ -1,4 +1,4 @@
-﻿namespace MiCalculadora
+namespace MiCalculadora
 {
     partial class FormCalculadora
     {
@@ -36,7 +36,8 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnConvertirABinario = new System.Windows.Forms.Button();
-            this.btnConccertirADecimal = new System.Windows.Forms.Button();
+            this.btnConvertirADecimal = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblResultado
@@ -50,6 +51,7 @@
             // 
             // txtNumero1
             // 
+            this.txtNumero1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumero1.Location = new System.Drawing.Point(45, 57);
             this.txtNumero1.Multiline = true;
             this.txtNumero1.Name = "txtNumero1";
@@ -58,16 +60,17 @@
             // 
             // cmbOperador
             // 
-            this.cmbOperador.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbOperador.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbOperador.FormattingEnabled = true;
-            this.cmbOperador.ItemHeight = 44;
+            this.cmbOperador.ItemHeight = 25;
             this.cmbOperador.Location = new System.Drawing.Point(217, 57);
             this.cmbOperador.Name = "cmbOperador";
-            this.cmbOperador.Size = new System.Drawing.Size(75, 50);
+            this.cmbOperador.Size = new System.Drawing.Size(75, 33);
             this.cmbOperador.TabIndex = 2;
             // 
             // txtNumero2
             // 
+            this.txtNumero2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumero2.Location = new System.Drawing.Point(319, 57);
             this.txtNumero2.Multiline = true;
             this.txtNumero2.Name = "txtNumero2";
@@ -114,22 +117,31 @@
             this.btnConvertirABinario.UseVisualStyleBackColor = true;
             this.btnConvertirABinario.Click += new System.EventHandler(this.btnConvertirABinario_Click);
             // 
-            // btnConccertirADecimal
+            // btnConvertirADecimal
             // 
-            this.btnConccertirADecimal.Location = new System.Drawing.Point(269, 190);
-            this.btnConccertirADecimal.Name = "btnConccertirADecimal";
-            this.btnConccertirADecimal.Size = new System.Drawing.Size(200, 53);
-            this.btnConccertirADecimal.TabIndex = 8;
-            this.btnConccertirADecimal.Text = "Convertir a Decimal";
-            this.btnConccertirADecimal.UseVisualStyleBackColor = true;
-            this.btnConccertirADecimal.Click += new System.EventHandler(this.btnConccertirADecimal_Click);
+            this.btnConvertirADecimal.Location = new System.Drawing.Point(269, 190);
+            this.btnConvertirADecimal.Name = "btnConvertirADecimal";
+            this.btnConvertirADecimal.Size = new System.Drawing.Size(200, 53);
+            this.btnConvertirADecimal.TabIndex = 8;
+            this.btnConvertirADecimal.Text = "Convertir a Decimal";
+            this.btnConvertirADecimal.UseVisualStyleBackColor = true;
+            this.btnConvertirADecimal.Click += new System.EventHandler(this.btnConvertirADecimal_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(59, 267);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 9;
             // 
             // FormCalculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 300);
-            this.Controls.Add(this.btnConccertirADecimal);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnConvertirADecimal);
             this.Controls.Add(this.btnConvertirABinario);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnLimpiar);
@@ -159,7 +171,8 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnConvertirABinario;
-        private System.Windows.Forms.Button btnConccertirADecimal;
-    }
+        private System.Windows.Forms.Button btnConvertirADecimal;
+    private System.Windows.Forms.ComboBox comboBox1;
+  }
 }
 
