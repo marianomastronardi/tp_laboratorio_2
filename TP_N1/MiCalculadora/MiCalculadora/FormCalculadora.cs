@@ -45,9 +45,9 @@ namespace MiCalculadora
     private void btnConvertirADecimal_Click(object sender, EventArgs e)
     {
       Numero n = new Numero();
-      int binToDec;
+      double binToDec = 0;
 
-      if (int.TryParse(lblResultado.Text, out binToDec))
+      if (double.TryParse(lblResultado.Text, out binToDec))
         lblResultado.Text = n.BinarioDecimal(binToDec.ToString());
     }
 
