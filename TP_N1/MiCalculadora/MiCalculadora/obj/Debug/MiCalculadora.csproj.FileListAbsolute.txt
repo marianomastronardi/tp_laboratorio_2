@@ -24,3 +24,16 @@ D:\UTN FRA\1º Año\1º Cuatrimestre\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalc
 D:\UTN FRA\1º Año\1º Cuatrimestre\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\obj\Debug\MiCalculadora.csproj.CopyComplete
 D:\UTN FRA\1º Año\1º Cuatrimestre\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\obj\Debug\MiCalculadora.exe
 D:\UTN FRA\1º Año\1º Cuatrimestre\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\obj\Debug\MiCalculadora.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\bin\Debug\MiCalculadora.exe.config
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\bin\Debug\MiCalculadora.exe
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\bin\Debug\MiCalculadora.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\bin\Debug\Entidades.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\bin\Debug\Entidades.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\obj\Debug\MiCalculadora.csprojAssemblyReference.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\obj\Debug\MiCalculadora.FormCalculadora.resources
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\obj\Debug\MiCalculadora.Properties.Resources.resources
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\obj\Debug\MiCalculadora.csproj.GenerateResource.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\obj\Debug\MiCalculadora.csproj.CoreCompileInputs.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\obj\Debug\MiCalculadora.csproj.CopyComplete
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\obj\Debug\MiCalculadora.exe
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N1\MiCalculadora\MiCalculadora\obj\Debug\MiCalculadora.pdb
