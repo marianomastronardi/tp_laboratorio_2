@@ -11,6 +11,7 @@ namespace Entidades_2018
     /// </summary>
     public abstract class Producto
     {
+        #region "Atributos"
         public enum EMarca
         {
             Serenisima, Campagnola, Arcor, Ilolay, Sancor, Pepsico
@@ -18,19 +19,25 @@ namespace Entidades_2018
         private EMarca marca;
         private string codigoDeBarras;
         private ConsoleColor colorPrimarioEmpaque;
+        #endregion
 
+        #region "Propiedades"
         /// <summary>
-        /// ReadOnly: Retornará la cantidad de ruedas del vehículo
+        /// ReadOnly: Retornará la cantidad de calorias de la clase hija
         /// </summary>
         protected abstract short CantidadCalorias { get;  }
+        #endregion
 
+        #region "Constructores"
         public Producto(string patente, EMarca marca, ConsoleColor color)
         {
             this.marca = marca;
             this.codigoDeBarras = patente;
             this.colorPrimarioEmpaque = color;
         }
+        #endregion
 
+        #region "Métodos"
         /// <summary>
         /// Publica todos los datos del Producto.
         /// </summary>
@@ -39,13 +46,19 @@ namespace Entidades_2018
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("CODIGO DE BARRAS: " + this.codigoDeBarras);
-            sb.AppendLine("MARCA           : " + this.marca.ToString());
-            sb.AppendLine("COLOR EMPAQUE   : " + this.colorPrimarioEmpaque.ToString());
+            sb.AppendLine("MARCA          : " + this.marca.ToString());
+            sb.AppendLine("COLOR EMPAQUE  : " + this.colorPrimarioEmpaque.ToString());
             sb.AppendLine("----------------------");
 
             return sb.ToString();
         }
+        #endregion
 
+        #region "Operadores"
+        /// <summary>
+        /// Operador explicito utilizado en el casteo de la clase Producto a string
+        /// </summary>
+        /// <param name="p"></param>
         public static explicit operator string(Producto p)
         {
             StringBuilder sb = new StringBuilder();
@@ -78,5 +91,6 @@ namespace Entidades_2018
         {
             return (v1.codigoDeBarras == v2.codigoDeBarras);
         }
+        #endregion
     }
 }

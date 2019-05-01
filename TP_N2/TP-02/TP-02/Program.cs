@@ -15,9 +15,6 @@ namespace TP_02_2018
             Console.SetWindowPosition(0, 0);
             Console.SetWindowSize(Console.LargestWindowWidth / 2, Console.LargestWindowHeight - 2);
 
-            // Nombre del alumno
-            //Console.
-            
             Changuito changoDeCompras = new Changuito(6);
 
             Dulce c1 = new Dulce(Producto.EMarca.Sancor, "ASD012", ConsoleColor.Black);
@@ -54,18 +51,21 @@ namespace TP_02_2018
             Console.Clear();
 
             // Muestro solo Leches
+            Console.Beep();
             Console.WriteLine(changoDeCompras.Mostrar(changoDeCompras, Changuito.ETipo.Leche));
             Console.WriteLine("<-----------PRESIONE UNA TECLA PARA CONTINUAR----------->");
             Console.ReadKey();
             Console.Clear();
 
             // Muestro solo Dulces
+            Console.Beep();
             Console.WriteLine(changoDeCompras.Mostrar(changoDeCompras, Changuito.ETipo.Dulce));
             Console.WriteLine("<-----------PRESIONE UNA TECLA PARA CONTINUAR----------->");
             Console.ReadKey();
             Console.Clear();
 
             // Muestro solo Snacks
+            Console.Beep();
             Console.WriteLine(changoDeCompras.Mostrar(changoDeCompras, Changuito.ETipo.Snacks));
             Console.WriteLine("<-------------PRESIONE UNA TECLA PARA SALIR------------->");
             Console.ReadKey();

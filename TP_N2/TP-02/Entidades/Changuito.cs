@@ -8,12 +8,14 @@ namespace Entidades_2018
     /// </summary>
     public sealed class Changuito
     {
+        #region "Atributos"
         private List<Producto> productos;
         private int espacioDisponible;
         public enum ETipo
         {
             Dulce, Leche, Snacks, Todos
         }
+        #endregion
 
         #region "Constructores"
         private Changuito()
@@ -80,7 +82,9 @@ namespace Entidades_2018
 
         #region "Operadores"
         /// <summary>
-        /// Agregará un elemento a la lista
+        /// Agregará un elemento a la lista si y solo si:
+        /// 1. El producto no se encuentra en la lista 
+        /// 2. La cantidad de elementos de la lista sea menor a espacioDisponible
         /// </summary>
         /// <param name="c">Objeto donde se agregará el elemento</param>
         /// <param name="p">Objeto a agregar</param>
