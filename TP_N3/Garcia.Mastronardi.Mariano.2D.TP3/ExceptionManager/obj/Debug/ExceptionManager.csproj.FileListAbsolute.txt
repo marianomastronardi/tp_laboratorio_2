@@ -1,0 +1,6 @@
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\ExceptionManager\bin\Debug\ExceptionManager.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\ExceptionManager\bin\Debug\ExceptionManager.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\ExceptionManager\obj\Debug\ExceptionManager.csprojAssemblyReference.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\ExceptionManager\obj\Debug\ExceptionManager.csproj.CoreCompileInputs.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\ExceptionManager\obj\Debug\ExceptionManager.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\ExceptionManager\obj\Debug\ExceptionManager.pdb
