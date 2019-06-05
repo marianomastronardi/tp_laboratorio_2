@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,19 +9,19 @@ namespace Entidades
 {
     public sealed class Profesor : Universitario
     {
-        private Queue<EClases> clasesDelDia;
+        private Queue<Universidad.EClases> clasesDelDia;
         private static Random random;
 
         //como declaro un constructor vacio privado
-        //private Profesor()
-        //{
+        static Profesor()
+        {
+          random = new Random();
+        }
 
-        //}
-
-        public Profesor()
+        public Profesor() 
         {
             //como hago para pasar por aca cuando llamo al otro constructor
-            random = new Random();
+      
         }
 
         public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad) : base(id, nombre, apellido, dni, nacionalidad)
@@ -33,17 +33,17 @@ namespace Entidades
         {
             switch(random.Next(4))
             {
-                case ((int)EClases.Laboratorio):
-                    this.clasesDelDia.Enqueue(EClases.Laboratorio);
+                case ((int)Universidad.EClases.Laboratorio):
+                    this.clasesDelDia.Enqueue(Universidad.EClases.Laboratorio);
                     break;
-                case ((int)EClases.Legislacion):
-                    this.clasesDelDia.Enqueue(EClases.Legislacion);
+                case ((int)Universidad.EClases.Legislacion):
+                    this.clasesDelDia.Enqueue(Universidad.EClases.Legislacion);
                     break;
-                case ((int)EClases.Programacion):
-                    this.clasesDelDia.Enqueue(EClases.Programacion);
+                case ((int)Universidad.EClases.Programacion):
+                    this.clasesDelDia.Enqueue(Universidad.EClases.Programacion);
                     break;
-                case ((int)EClases.SPD):
-                    this.clasesDelDia.Enqueue(EClases.SPD);
+                case ((int)Universidad.EClases.SPD):
+                    this.clasesDelDia.Enqueue(Universidad.EClases.SPD);
                     break;
                 default:
                     break;
@@ -53,7 +53,7 @@ namespace Entidades
         protected override string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
-            EClases clase;
+            Universidad.EClases clase;
             sb.AppendFormat("CLASE DE {0} POR {1} ", this.clasesDelDia.ToString(), base.ToString());
             sb.AppendLine(ParticiparEnClase());
             return sb.ToString();
@@ -75,7 +75,7 @@ namespace Entidades
             return this.MostrarDatos();
         }
 
-        public static bool operator ==(Profesor i, EClases clase)
+        public static bool operator ==(Profesor i, Universidad.EClases clase)
         {
             bool existe = false;
 
@@ -90,7 +90,7 @@ namespace Entidades
             return existe;
         }
 
-        public static bool operator !=(Profesor i, EClases clase)
+        public static bool operator !=(Profesor i, Universidad.EClases clase)
         {
             return (!(i == clase));
         }

@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8CC927EA-9A78-410B-8EC8-B3CC1444A526}</ProjectGuid>
+    <ProjectGuid>{04E210B6-FEDD-4C7F-8BF3-E78995483E04}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Entidades</RootNamespace>
-    <AssemblyName>Entidades</AssemblyName>
+    <RootNamespace>Archivos</RootNamespace>
+    <AssemblyName>Archivos</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,25 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Alumno.cs" />
-    <Compile Include="Jornada.cs" />
-    <Compile Include="Profesor.cs" />
+    <Compile Include="IArchivo.cs" />
+    <Compile Include="Texto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Universidad.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Archivos\Archivos.csproj">
-      <Project>{04e210b6-fedd-4c7f-8bf3-e78995483e04}</Project>
-      <Name>Archivos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EntidadesAbstractas\EntidadesAbstractas.csproj">
-      <Project>{25be4b28-f29a-46cc-b596-c6a4d8026ad2}</Project>
-      <Name>EntidadesAbstractas</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ExceptionManager\ExceptionManager.csproj">
-      <Project>{e0f4e215-3cc9-4986-a389-0e8cb33bf688}</Project>
-      <Name>ExceptionManager</Name>
-    </ProjectReference>
+    <Compile Include="Xml.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

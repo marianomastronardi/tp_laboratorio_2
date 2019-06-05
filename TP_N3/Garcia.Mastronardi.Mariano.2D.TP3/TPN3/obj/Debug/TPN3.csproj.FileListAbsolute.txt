@@ -1,0 +1,2 @@
+C:\Users\alumno\Desktop\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\obj\Debug\TPN3.csprojAssemblyReference.cache
+C:\Users\alumno\Desktop\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\obj\Debug\TPN3.csproj.CoreCompileInputs.cache
