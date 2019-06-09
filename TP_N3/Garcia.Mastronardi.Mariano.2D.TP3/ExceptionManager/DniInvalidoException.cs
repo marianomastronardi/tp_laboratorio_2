@@ -10,9 +10,9 @@ namespace ExceptionManager
    {
     private string mensajeBase;
 
-    public DniInvalidoException()
+    public DniInvalidoException() :base("Error de formato en el DNI.")
     {
-            this.mensajeBase = "Error de formato en el DNI.";
+            this.mensajeBase = this.Message;
     }
 
     public DniInvalidoException(Exception e) :this(string.Empty, e)

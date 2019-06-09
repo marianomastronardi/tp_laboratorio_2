@@ -38,15 +38,14 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.MostrarDatos());
-            sb.AppendFormat("LEGAJO NúMERO: {0}\n", this.Legajo);
-            sb.AppendFormat("ESTADO DE CUENTA: {0}\n\n", this.estadoCuenta.ToString());
+            sb.AppendFormat("\nESTADO DE CUENTA: {0}\n", this.estadoCuenta.ToString());
             sb.Append(this.ParticiparEnClase());
             return sb.ToString();
         }
         protected override string ParticiparEnClase()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("TOMA CLASES DE: {0}\n", this.claseQueToma);
+            sb.AppendFormat("TOMA CLASES DE: {0}\n\n", this.claseQueToma);
 
             return sb.ToString();
         }

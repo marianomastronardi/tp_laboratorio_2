@@ -31,7 +31,7 @@ namespace EntidadesAbstractas
             StringBuilder sb = new StringBuilder();
 
             sb.AppendFormat(base.ToString());
-            sb.AppendFormat("CARNET NÚMERO: {0}", this.Legajo);
+            sb.AppendFormat("LEGAJO NÚMERO: {0}", this.Legajo);
 
             return sb.ToString();
         }

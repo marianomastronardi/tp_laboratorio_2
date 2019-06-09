@@ -17,10 +17,10 @@ namespace Entidades
 
         private List<Alumno> alumnos;
         private List<Jornada> jornada;
-        private List<Profesor> profesaores;
+        private List<Profesor> profesores;
 
         public List<Alumno> Alumnos { get { return this.alumnos; } set { this.alumnos = value; } }
-        public List<Profesor> Instructores { get { return this.profesaores; } set { this.profesaores = value; } }
+        public List<Profesor> Instructores { get { return this.profesores; } set { this.profesores = value; } }
         public List<Jornada> Jornadas { get { return this.jornada; } set { this.jornada = value; } }
 
         public Jornada this[int i] { get { return this.jornada[i]; } set { this.jornada[i] = value; } }
@@ -36,18 +36,12 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("JORNADA: ");
-            foreach (Profesor p in this.profesaores)
+            foreach (Jornada j in this.Jornadas)
             {
-                sb.AppendLine(p.ToString());
+                sb.AppendLine("JORNADA: ");
+                sb.AppendLine(j.ToString());
+                sb.AppendLine("<----------------------------->");
             }
-            sb.AppendLine("ALUMNOS: ");
-            foreach (Alumno a in this.Alumnos)
-            {
-                sb.AppendLine(a.ToString());
-            }
-            sb.AppendLine("<----------------------------->");
-
             return sb.ToString();
         }
 
@@ -71,7 +65,10 @@ namespace Entidades
 
         public static bool operator ==(Universidad g, Profesor i)
         {
-            return g.Instructores.Contains(i);
+            bool existe = false;
+            if (!(i is null | g is null | g.profesores == null))
+                existe = g.profesores.Contains(i);
+            return existe;
         }
 
         public static Profesor operator ==(Universidad u, EClases clase)
@@ -117,16 +114,15 @@ namespace Entidades
             }
             if (p is null)
                 throw new SinProfesorException();
-            return p;
+            return (p);
         }
 
         public static Universidad operator +(Universidad g, EClases clase)
         {
             Profesor p = new Profesor();
-            Jornada j = new Jornada(clase, (g==clase));
-            List<Alumno> list = new List<Alumno>();
+            Jornada j = new Jornada(clase, (g == clase));
             foreach (Alumno a in g.Alumnos)
-                if (a == clase) list.Add(a);
+                if (a == clase) j.Alumno.Add(a);
             g.Jornadas.Add(j);
             return g;
         }
@@ -144,8 +140,6 @@ namespace Entidades
         {
             if (u != i)
                 u.Instructores.Add(i);
-            else
-                throw new SinProfesorException();
             return u;
         }
     }

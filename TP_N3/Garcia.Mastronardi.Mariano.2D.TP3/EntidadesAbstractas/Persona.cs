@@ -42,13 +42,13 @@ namespace EntidadesAbstractas
         public string Apellido
         {
             get { return apellido; }
-            set { if (CaracteresValidos(value)) apellido = value; }
+            set { if (ValidarNombreApellido(value).Length > 0) apellido = value; }
         }
 
         public string Nombre
         {
             get { return nombre; }
-            set { if (CaracteresValidos(value)) nombre = value; }
+            set { if (ValidarNombreApellido(value).Length > 0) nombre = value; }
         }
 
         public Persona()
@@ -78,31 +78,11 @@ namespace EntidadesAbstractas
             StringBuilder sb = new StringBuilder();
 
             sb.AppendFormat("NOMBRE COMPLETO: {0}, {1} \n", this.Apellido, this.Nombre);
-            sb.AppendFormat("NACIONALIDAD: {0} \n", this.Nacionalidad);
+            sb.AppendFormat("NACIONALIDAD: {0} \n\n", this.Nacionalidad);
 
             return sb.ToString();
         }
-
-        private bool CaracteresValidos(string cadena)
-        {
-            bool IsValid = true;
-            int charToASCII;
-
-            List<int> validos = new List<int>() { 128, 129, 130, 132, 135, 137, 139, 142, 144, 145, 146, 148, 153, 154, 155, 157, 160, 161, 162, 163, 164, 165, 181, 211, 214, 216, 224, 225, 233, 255 };
-            for (int i = 0; i < cadena.Length; i++)
-            {
-                charToASCII = char.ConvertToUtf32(cadena, i);
-
-                //65-90 A-Z
-                //97-122 a-z
-                IsValid = ((charToASCII >= 65 && charToASCII <= 90) | (charToASCII >= 97 && charToASCII <= 122) | validos.Contains(charToASCII));
-
-                if (!IsValid) break;
-            }
-
-            return IsValid;
-        }
-
+        
         private int ValidarDNI(ENacionalidad nacionalidad, int dato)
         {
             if (this.Nacionalidad == ENacionalidad.Argentino)
@@ -130,7 +110,22 @@ namespace EntidadesAbstractas
 
         private string ValidarNombreApellido(string dato)
         {
-            return CaracteresValidos(dato) ? dato : string.Empty;
+            bool IsValid = true;
+            int charToASCII;
+
+            List<int> validos = new List<int>() { 128, 129, 130, 132, 135, 137, 139, 142, 144, 145, 146, 148, 153, 154, 155, 157, 160, 161, 162, 163, 164, 165, 181, 211, 214, 216, 224, 225, 233, 255 };
+            for (int i = 0; i < dato.Length; i++)
+            {
+                charToASCII = char.ConvertToUtf32(dato, i);
+
+                //65-90 A-Z
+                //97-122 a-z
+                IsValid = ((charToASCII >= 65 && charToASCII <= 90) | (charToASCII >= 97 && charToASCII <= 122) | validos.Contains(charToASCII));
+
+                if (!IsValid) break;
+            }
+            
+            return IsValid ? dato : string.Empty;
         }
     }
 }

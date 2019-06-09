@@ -24,6 +24,7 @@ namespace Entidades
         {
             this.clasesDelDia = new Queue<Universidad.EClases>();
             this._randomClases();
+            this._randomClases();
         }
 
         private void _randomClases()
@@ -51,10 +52,8 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             Universidad.EClases clase = this.clasesDelDia.Dequeue();
-            //null exception
-            sb.AppendFormat("CLASE DE {0} POR {1} ", clase.ToString(), base.ToString());
+            sb.AppendFormat("CLASE DE {0} POR {1}\n", clase.ToString(), base.MostrarDatos());
             this.clasesDelDia.Enqueue(clase);
-            sb.AppendFormat("LEGAJO NúMERO: {0}\n", this.Legajo);
             sb.AppendLine(ParticiparEnClase());
             
             return sb.ToString();
@@ -63,10 +62,12 @@ namespace Entidades
         protected override string ParticiparEnClase()
         {
             StringBuilder sb = new StringBuilder();
-            Universidad.EClases clase = this.clasesDelDia.Dequeue();
+            Queue<Universidad.EClases>.Enumerator clase = this.clasesDelDia.GetEnumerator();
             sb.AppendLine("CLASES DEL DÍA:");
-            sb.AppendLine(clase.ToString());
-            this.clasesDelDia.Enqueue(clase);
+            while(clase.MoveNext())
+            {
+                sb.AppendLine(clase.Current.ToString());
+            }
             return sb.ToString();
         }
 

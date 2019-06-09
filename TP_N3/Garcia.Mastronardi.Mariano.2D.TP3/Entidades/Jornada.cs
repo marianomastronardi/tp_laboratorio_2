@@ -15,8 +15,7 @@ namespace Entidades
             get { return instructor; }
             set { instructor = value; }
         }
-
-
+        
         public Universidad.EClases Clase
         {
             get { return clase; }
@@ -57,6 +56,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(this.Instructor.ToString());
+            sb.AppendLine("ALUMNOS: ");
             if (alumnos != null)
             {
                 foreach (Alumno a in alumnos)
@@ -77,7 +77,7 @@ namespace Entidades
 
         public static Jornada operator +(Jornada j, Alumno a)
         {
-            if (!(j.alumnos.Contains(a)))
+            if (!(j!=a))
                 j.alumnos.Add(a);
             return j;
         }
