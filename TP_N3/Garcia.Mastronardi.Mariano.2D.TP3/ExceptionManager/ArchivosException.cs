@@ -8,7 +8,7 @@ namespace ExceptionManager
 {
   public class ArchivosException : Exception
   {
-    public ArchivosException(Exception innerException)
+    public ArchivosException(Exception innerException) :base(string.Empty, innerException)
     {
 
     }

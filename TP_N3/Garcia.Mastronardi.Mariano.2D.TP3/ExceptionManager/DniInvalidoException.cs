@@ -12,20 +12,20 @@ namespace ExceptionManager
 
     public DniInvalidoException()
     {
-
+            this.mensajeBase = "Error de formato en el DNI.";
     }
 
-    public DniInvalidoException(Exception e)
+    public DniInvalidoException(Exception e) :this(string.Empty, e)
+    {
+            
+    }
+
+    public DniInvalidoException(string message) :this(message,null)
     {
 
     }
 
-    public DniInvalidoException(string message)
-    {
-
-    }
-
-    public DniInvalidoException(string message, Exception e)
+    public DniInvalidoException(string message, Exception e) :base(message, e)
     {
 
     }

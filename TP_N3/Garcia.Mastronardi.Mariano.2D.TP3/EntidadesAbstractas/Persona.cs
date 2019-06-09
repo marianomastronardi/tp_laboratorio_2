@@ -108,12 +108,12 @@ namespace EntidadesAbstractas
             if (this.Nacionalidad == ENacionalidad.Argentino)
             {
                 if (!(dato >= 1 && dato <= 89999999))
-                    throw new NacionalidadInvalidaException();
+                    throw new NacionalidadInvalidaException("La nacionalidad no se condice con el numero de DNI");
             }
             else //Extranjero
             {
                 if (!(dato >= 90000000 && dato <= 99999999))
-                    throw new NacionalidadInvalidaException();
+                    throw new NacionalidadInvalidaException("La nacionalidad no se condice con el numero de DNI");
             }
             return dato;
         }

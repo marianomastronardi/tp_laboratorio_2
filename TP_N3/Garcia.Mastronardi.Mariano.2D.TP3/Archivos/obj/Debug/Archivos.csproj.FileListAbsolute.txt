@@ -4,3 +4,9 @@ C:\Users\alumno\Desktop\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3
 C:\Users\alumno\Desktop\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\Archivos\obj\Debug\Archivos.csproj.CoreCompileInputs.cache
 C:\Users\alumno\Desktop\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\Archivos\obj\Debug\Archivos.dll
 C:\Users\alumno\Desktop\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\Archivos\obj\Debug\Archivos.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\Archivos\bin\Debug\Archivos.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\Archivos\bin\Debug\Archivos.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\Archivos\obj\Debug\Archivos.csprojAssemblyReference.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\Archivos\obj\Debug\Archivos.csproj.CoreCompileInputs.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\Archivos\obj\Debug\Archivos.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\Archivos\obj\Debug\Archivos.pdb

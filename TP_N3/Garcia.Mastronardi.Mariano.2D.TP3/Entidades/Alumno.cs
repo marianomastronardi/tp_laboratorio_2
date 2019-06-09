@@ -17,7 +17,7 @@ namespace Entidades
         }
 
         private EEstadoCuenta estadoCuenta;
-        private EClases claseQueToma;
+        private Universidad.EClases claseQueToma;
 
         public Alumno()
         {
@@ -38,11 +38,11 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.MostrarDatos());
-            sb.AppendFormat("ESTADO DE CUENTA: {0}\n", this.estadoCuenta);
+            sb.AppendFormat("LEGAJO NúMERO: {0}\n", this.Legajo);
+            sb.AppendFormat("ESTADO DE CUENTA: {0}\n\n", this.estadoCuenta.ToString());
             sb.Append(this.ParticiparEnClase());
             return sb.ToString();
         }
-
         protected override string ParticiparEnClase()
         {
             StringBuilder sb = new StringBuilder();
@@ -56,12 +56,12 @@ namespace Entidades
             return this.MostrarDatos();
         }
 
-        public static bool operator ==(Alumno a, EClases clase)
+        public static bool operator ==(Alumno a, Universidad.EClases clase)
         {
             return (a.claseQueToma == clase && a.estadoCuenta != EEstadoCuenta.Deudor);
         }
 
-        public static bool operator !=(Alumno a, EClases clase)
+        public static bool operator !=(Alumno a, Universidad.EClases clase)
         {
             return (a.claseQueToma != clase);
         }

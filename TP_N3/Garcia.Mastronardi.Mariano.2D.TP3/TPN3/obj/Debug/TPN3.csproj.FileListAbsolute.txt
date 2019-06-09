@@ -1,2 +1,18 @@
 C:\Users\alumno\Desktop\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\obj\Debug\TPN3.csprojAssemblyReference.cache
 C:\Users\alumno\Desktop\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\obj\Debug\TPN3.csproj.CoreCompileInputs.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\obj\Debug\TPN3.csprojAssemblyReference.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\obj\Debug\TPN3.csproj.CoreCompileInputs.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\bin\Debug\TPN3.exe.config
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\bin\Debug\TPN3.exe
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\bin\Debug\TPN3.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\bin\Debug\Entidades.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\bin\Debug\EntidadesAbstractas.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\bin\Debug\ExceptionManager.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\bin\Debug\Archivos.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\bin\Debug\EntidadesAbstractas.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\bin\Debug\Entidades.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\bin\Debug\ExceptionManager.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\bin\Debug\Archivos.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\obj\Debug\TPN3.csproj.CopyComplete
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\obj\Debug\TPN3.exe
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\TPN3\obj\Debug\TPN3.pdb

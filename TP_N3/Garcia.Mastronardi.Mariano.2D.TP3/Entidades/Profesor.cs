@@ -1,9 +1,7 @@
+using EntidadesAbstractas;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using EntidadesAbstractas;
 
 namespace Entidades
 {
@@ -12,26 +10,25 @@ namespace Entidades
         private Queue<Universidad.EClases> clasesDelDia;
         private static Random random;
 
-        //como declaro un constructor vacio privado
         static Profesor()
         {
-          random = new Random();
+            random = new Random();
         }
 
-        public Profesor() 
+        public Profesor()
         {
-            //como hago para pasar por aca cuando llamo al otro constructor
-      
+            
         }
 
-        public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad) : base(id, nombre, apellido, dni, nacionalidad)
+        public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad) : base(id, nombre, apellido, dni, nacionalidad) 
         {
+            this.clasesDelDia = new Queue<Universidad.EClases>();
             this._randomClases();
         }
 
         private void _randomClases()
         {
-            switch(random.Next(4))
+            switch (random.Next(4))
             {
                 case ((int)Universidad.EClases.Laboratorio):
                     this.clasesDelDia.Enqueue(Universidad.EClases.Laboratorio);
@@ -53,20 +50,23 @@ namespace Entidades
         protected override string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
-            Universidad.EClases clase;
-            sb.AppendFormat("CLASE DE {0} POR {1} ", this.clasesDelDia.ToString(), base.ToString());
+            Universidad.EClases clase = this.clasesDelDia.Dequeue();
+            //null exception
+            sb.AppendFormat("CLASE DE {0} POR {1} ", clase.ToString(), base.ToString());
+            this.clasesDelDia.Enqueue(clase);
+            sb.AppendFormat("LEGAJO NúMERO: {0}\n", this.Legajo);
             sb.AppendLine(ParticiparEnClase());
+            
             return sb.ToString();
         }
 
         protected override string ParticiparEnClase()
         {
             StringBuilder sb = new StringBuilder();
+            Universidad.EClases clase = this.clasesDelDia.Dequeue();
             sb.AppendLine("CLASES DEL DÍA:");
-            while (clasesDelDia.Count > 0)
-            {
-                sb.AppendLine(clasesDelDia.Dequeue().ToString());
-            }
+            sb.AppendLine(clase.ToString());
+            this.clasesDelDia.Enqueue(clase);
             return sb.ToString();
         }
 
@@ -77,17 +77,7 @@ namespace Entidades
 
         public static bool operator ==(Profesor i, Universidad.EClases clase)
         {
-            bool existe = false;
-
-            while(i.clasesDelDia.Count > 0)
-            {
-                if(i.clasesDelDia.Dequeue() == clase)
-                {
-                    existe = !existe;
-                    break;
-                }
-            }
-            return existe;
+            return i.clasesDelDia.Contains(clase);
         }
 
         public static bool operator !=(Profesor i, Universidad.EClases clase)

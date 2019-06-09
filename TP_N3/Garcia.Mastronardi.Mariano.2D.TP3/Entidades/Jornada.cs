@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Archivos;
+using System.Collections.Generic;
 using System.Text;
 
 namespace Entidades
@@ -6,7 +7,7 @@ namespace Entidades
     public class Jornada
     {
         private List<Alumno> alumnos;
-        private EClases clase;
+        private Universidad.EClases clase;
         private Profesor instructor;
 
         public Profesor Instructor
@@ -16,7 +17,7 @@ namespace Entidades
         }
 
 
-        public EClases Clase
+        public Universidad.EClases Clase
         {
             get { return clase; }
             set { clase = value; }
@@ -33,28 +34,34 @@ namespace Entidades
             this.Alumno = new List<Alumno>();
         }
 
-        public Jornada(EClases clase, Profesor instructor)
+        public Jornada(Universidad.EClases clase, Profesor instructor) :this()
         {
             this.clase = clase;
+            this.instructor = new Profesor();
             this.instructor = instructor;
         }
 
-        public bool Guardar(Jornada jornada)
+        public static bool Guardar(Jornada jornada)
         {
-
+            return new Texto().Guardar("Jornada.txt", jornada.ToString());
         }
 
         public string Leer()
         {
-
+            string j = string.Empty;
+            new Texto().Leer("Jornada.txt", out j);
+            return j;
         }
 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(this.Instructor.ToString());
-            foreach (Alumno a in alumnos)
-                sb.Append(a.ToString());
+            if (alumnos != null)
+            {
+                foreach (Alumno a in alumnos)
+                    sb.Append(a.ToString());
+            }
             return sb.ToString();
         }
 

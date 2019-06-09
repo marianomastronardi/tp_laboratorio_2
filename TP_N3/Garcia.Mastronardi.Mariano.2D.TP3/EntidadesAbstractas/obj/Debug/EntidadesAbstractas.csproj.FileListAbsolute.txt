@@ -7,3 +7,12 @@ C:\Users\alumno\Desktop\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3
 C:\Users\alumno\Desktop\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\EntidadesAbstractas\obj\Debug\EntidadesAbstractas.csproj.CopyComplete
 C:\Users\alumno\Desktop\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\EntidadesAbstractas\obj\Debug\EntidadesAbstractas.dll
 C:\Users\alumno\Desktop\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\EntidadesAbstractas\obj\Debug\EntidadesAbstractas.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\EntidadesAbstractas\bin\Debug\EntidadesAbstractas.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\EntidadesAbstractas\bin\Debug\EntidadesAbstractas.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\EntidadesAbstractas\bin\Debug\ExceptionManager.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\EntidadesAbstractas\bin\Debug\ExceptionManager.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\EntidadesAbstractas\obj\Debug\EntidadesAbstractas.csprojAssemblyReference.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\EntidadesAbstractas\obj\Debug\EntidadesAbstractas.csproj.CoreCompileInputs.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\EntidadesAbstractas\obj\Debug\EntidadesAbstractas.csproj.CopyComplete
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\EntidadesAbstractas\obj\Debug\EntidadesAbstractas.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N3\Garcia.Mastronardi.Mariano.2D.TP3\EntidadesAbstractas\obj\Debug\EntidadesAbstractas.pdb

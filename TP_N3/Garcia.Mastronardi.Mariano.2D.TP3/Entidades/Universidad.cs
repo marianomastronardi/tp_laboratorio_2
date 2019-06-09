@@ -1,122 +1,152 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ExceptionManager;
 using Archivos;
+using ExceptionManager;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Entidades
 {
-  public class Universidad
-  {
-    public enum EClases
+    public class Universidad
     {
-      Programacion,
-      Laboratorio,
-      Legislacion,
-      SPD
-    }
-
-    private List<Alumno> alumnos;
-    private List<Jornada> jornada;
-    private List<Profesor> profesaores;
-
-    public List<Alumno> Alumnos { get {return this.alumnos;} set; }
-    public List<Profesor> Instructores { get { return this.profesaores; } set; }
-    public List<Jornada> Jornadas { get { return this.jornada; } set; }
-
-    public Jornada this[int i] { get { return this.jornada[i]; } set; }
-
-    public Universidad()
-    {
-
-    }
-
-    public override string ToString()
-    {
-      return base.ToString();
-    }
-
-    public bool Guardar(Universidad uni)
-    {
-      return new Xml<Universidad>().Guardar("Universidad", uni);
-    }
-
-    private static string MostrarDatos(Universidad uni)
-    {
-      return uni.ToString();
-    }
-
-    public static bool operator ==(Universidad g, Alumno a)
-    {
-      return g.Alumnos.Contains(a);
-    }
-
-    public static bool operator ==(Universidad g, Profesor i)
-    {
-      return g.Instructores.Contains(i);
-    }
-
-    public static Profesor operator ==(Universidad u, EClases clase)
-    {
-      Profesor p;
-
-      foreach(Profesor a in u.Instructores)
-      {
-        if(a==clase)
+        public enum EClases
         {
-          p = new Profesor();
-          p = a;
-          break;
+            Programacion,
+            Laboratorio,
+            Legislacion,
+            SPD
         }
-      }
-      if(p==null)
-        throw new SinProfesorException();
-      return p;
-    }
 
-    public static bool operator !=(Universidad g, Alumno a)
-    {
-      return (!(g == a));
-    }
+        private List<Alumno> alumnos;
+        private List<Jornada> jornada;
+        private List<Profesor> profesaores;
 
-    public static bool operator !=(Universidad g, Profesor i)
-    {
-      return (!(g == i));
-    }
+        public List<Alumno> Alumnos { get { return this.alumnos; } set { this.alumnos = value; } }
+        public List<Profesor> Instructores { get { return this.profesaores; } set { this.profesaores = value; } }
+        public List<Jornada> Jornadas { get { return this.jornada; } set { this.jornada = value; } }
 
-    public static Profesor operator !=(Universidad u, EClases clase)
-    {
-      Profesor p;
+        public Jornada this[int i] { get { return this.jornada[i]; } set { this.jornada[i] = value; } }
 
-      foreach (Profesor a in u.Instructores)
-      {
-        if (a!=clase)
+        public Universidad()
         {
-          p = new Profesor();
-          p = a;
-          break;
+            this.Alumnos = new List<Alumno>();
+            this.Instructores = new List<Profesor>();
+            this.jornada = new List<Jornada>();
         }
-      }
-      if (p == null)
-        throw new SinProfesorException();
-      return p;
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("JORNADA: ");
+            foreach (Profesor p in this.profesaores)
+            {
+                sb.AppendLine(p.ToString());
+            }
+            sb.AppendLine("ALUMNOS: ");
+            foreach (Alumno a in this.Alumnos)
+            {
+                sb.AppendLine(a.ToString());
+            }
+            sb.AppendLine("<----------------------------->");
+
+            return sb.ToString();
+        }
+
+        public static bool Guardar(Universidad uni)
+        {
+            return new Xml<Universidad>().Guardar("Universidad.xml", uni);
+        }
+
+        private static string MostrarDatos(Universidad uni)
+        {
+            return uni.ToString();
+        }
+
+        public static bool operator ==(Universidad g, Alumno a)
+        {
+            bool existe = false;
+            if (!(a is null | g is null | g.Alumnos == null))
+                existe = g.Alumnos.Contains(a);
+            return existe;
+        }
+
+        public static bool operator ==(Universidad g, Profesor i)
+        {
+            return g.Instructores.Contains(i);
+        }
+
+        public static Profesor operator ==(Universidad u, EClases clase)
+        {
+            Profesor p = null;
+
+            foreach (Profesor a in u.Instructores)
+            {
+                if (a == clase)
+                {
+                    p = new Profesor();
+                    p = a;
+                    break;
+                }
+            }
+            if (p is null)
+                throw new SinProfesorException();
+            return p;
+        }
+
+        public static bool operator !=(Universidad g, Alumno a)
+        {
+            return (!(g == a));
+        }
+
+        public static bool operator !=(Universidad g, Profesor i)
+        {
+            return (!(g == i));
+        }
+
+        public static Profesor operator !=(Universidad u, EClases clase)
+        {
+            Profesor p = null;
+
+            foreach (Profesor a in u.Instructores)
+            {
+                if (a != clase)
+                {
+                    p = new Profesor();
+                    p = a;
+                    break;
+                }
+            }
+            if (p is null)
+                throw new SinProfesorException();
+            return p;
+        }
+
+        public static Universidad operator +(Universidad g, EClases clase)
+        {
+            Profesor p = new Profesor();
+            Jornada j = new Jornada(clase, (g==clase));
+            List<Alumno> list = new List<Alumno>();
+            foreach (Alumno a in g.Alumnos)
+                if (a == clase) list.Add(a);
+            g.Jornadas.Add(j);
+            return g;
+        }
+
+        public static Universidad operator +(Universidad u, Alumno a)
+        {
+            if (u != a)
+                u.Alumnos.Add(a);
+            else
+                throw new AlumnoRepetidoException();
+            return u;
+        }
+
+        public static Universidad operator +(Universidad u, Profesor i)
+        {
+            if (u != i)
+                u.Instructores.Add(i);
+            else
+                throw new SinProfesorException();
+            return u;
+        }
     }
-
-    public static Universidad operator +(Universidad g, EClases clase)
-    {
-      
-    }
-
-    public static Universidad operator +(Universidad u, Alumno a)
-    {
-
-    }
-
-    public static Universidad operator +(Universidad u, Profesor i)
-    {
-
-    }
-  }
 }
