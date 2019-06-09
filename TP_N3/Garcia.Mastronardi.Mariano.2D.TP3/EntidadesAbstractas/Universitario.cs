@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace EntidadesAbstractas
 {
@@ -26,6 +22,10 @@ namespace EntidadesAbstractas
             this.Legajo = legajo;
         }
 
+        /// <summary>
+        /// Muestra los atrinutos de la clase base y el legajo
+        /// </summary>
+        /// <returns>los datos del universitario</returns>
         protected virtual string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
@@ -38,6 +38,12 @@ namespace EntidadesAbstractas
 
         protected abstract string ParticiparEnClase();
 
+        /// <summary>
+        /// Verifica si los dos universitarios son igulales
+        /// </summary>
+        /// <param name="pg1"></param>
+        /// <param name="pg2"></param>
+        /// <returns>si coinciden en DNI y tipo, es true</returns>
         public static bool operator ==(Universitario pg1, Universitario pg2)
         {
             return ((pg1.DNI == pg2.DNI | pg1.Legajo == pg2.Legajo) && pg1.GetType() == pg2.GetType());

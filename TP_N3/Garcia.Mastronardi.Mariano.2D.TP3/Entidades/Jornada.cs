@@ -15,7 +15,7 @@ namespace Entidades
             get { return instructor; }
             set { instructor = value; }
         }
-        
+
         public Universidad.EClases Clase
         {
             get { return clase; }
@@ -33,25 +33,38 @@ namespace Entidades
             this.Alumno = new List<Alumno>();
         }
 
-        public Jornada(Universidad.EClases clase, Profesor instructor) :this()
+        public Jornada(Universidad.EClases clase, Profesor instructor) : this()
         {
             this.clase = clase;
             this.instructor = new Profesor();
             this.instructor = instructor;
         }
 
+        /// <summary>
+        /// Llama a la interface IArchivo para generar un archivo de texto
+        /// </summary>
+        /// <param name="jornada"></param>
+        /// <returns>True en caso de que se haya creado el archivo</returns>
         public static bool Guardar(Jornada jornada)
         {
-            return new Texto().Guardar("Jornada.txt", jornada.ToString());
+            return new Texto().Guardar(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "\\Jornada.txt", jornada.ToString());
         }
 
+        /// <summary>
+        /// Llama a la interface IArchivo para leer un archivo de texto
+        /// </summary>
+        /// <returns>el texto con el contenido del archivo</returns>
         public string Leer()
         {
             string j = string.Empty;
-            new Texto().Leer("Jornada.txt", out j);
+            new Texto().Leer(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "\\Jornada.txt", out j);
             return j;
         }
 
+        /// <summary>
+        /// Busca los profesores y los alumnos asignados a la jornada
+        /// </summary>
+        /// <returns>los datos de profesores y alumnos</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -75,9 +88,15 @@ namespace Entidades
             return (!(j == a));
         }
 
+        /// <summary>
+        /// Si un alumno no esta asignado a la jornada, lo agrega
+        /// </summary>
+        /// <param name="j"></param>
+        /// <param name="a"></param>
+        /// <returns>retorna la jornada con el alumno agregado en caso de que no existiera antes</returns>
         public static Jornada operator +(Jornada j, Alumno a)
         {
-            if (!(j!=a))
+            if (!(j != a))
                 j.alumnos.Add(a);
             return j;
         }

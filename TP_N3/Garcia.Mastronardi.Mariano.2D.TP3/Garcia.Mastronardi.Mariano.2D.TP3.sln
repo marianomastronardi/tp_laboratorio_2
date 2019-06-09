@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntidadesAbstractas", "Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Archivos", "Archivos\Archivos.csproj", "{04E210B6-FEDD-4C7F-8BF3-E78995483E04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUnitarios", "TestUnitarios\TestUnitarios.csproj", "{F4529B7C-B8F9-45CF-8C49-86C78156B077}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{04E210B6-FEDD-4C7F-8BF3-E78995483E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04E210B6-FEDD-4C7F-8BF3-E78995483E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04E210B6-FEDD-4C7F-8BF3-E78995483E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4529B7C-B8F9-45CF-8C49-86C78156B077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4529B7C-B8F9-45CF-8C49-86C78156B077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4529B7C-B8F9-45CF-8C49-86C78156B077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4529B7C-B8F9-45CF-8C49-86C78156B077}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

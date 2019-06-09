@@ -1,9 +1,6 @@
-﻿using System;
+﻿using ExceptionManager;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using ExceptionManager;
 
 namespace EntidadesAbstractas
 {
@@ -22,13 +19,13 @@ namespace EntidadesAbstractas
 
         public string StringToDNI
         {
-            set { this.dni = ValidarDNI(this.Nacionalidad, value); }
+            set { this.dni = ValidarDNI(this.Nacionalidad, value) > 0 ? ValidarDNI(this.Nacionalidad, value) : throw new NacionalidadInvalidaException("La nacionalidad no se condice con el numero de DNI"); }
         }
 
         public int DNI
         {
             get { return dni; }
-            set { this.dni = ValidarDNI(this.Nacionalidad, value); }
+            set { this.dni = ValidarDNI(this.Nacionalidad, value) > 0 ? value : throw new NacionalidadInvalidaException("La nacionalidad no se condice con el numero de DNI"); }
         }
 
 
@@ -73,6 +70,10 @@ namespace EntidadesAbstractas
             this.StringToDNI = dni;
         }
 
+        /// <summary>
+        /// Verifica los atributos de la clase
+        /// </summary>
+        /// <returns>Nombre completo + Nacionalidad</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -82,22 +83,34 @@ namespace EntidadesAbstractas
 
             return sb.ToString();
         }
-        
+
+        /// <summary>
+        /// Verifica si es correcta la Nacionalidad segun el documento
+        /// </summary>
+        /// <param name="nacionalidad"></param>
+        /// <param name="dato">numero de documento</param>
+        /// <returns>Si es Argentino, dato tiene q estar entre 1 y 89999999, sino entre 90000000 y 99999999</returns>
         private int ValidarDNI(ENacionalidad nacionalidad, int dato)
         {
             if (this.Nacionalidad == ENacionalidad.Argentino)
             {
                 if (!(dato >= 1 && dato <= 89999999))
-                    throw new NacionalidadInvalidaException("La nacionalidad no se condice con el numero de DNI");
+                    dato = 0;
             }
             else //Extranjero
             {
                 if (!(dato >= 90000000 && dato <= 99999999))
-                    throw new NacionalidadInvalidaException("La nacionalidad no se condice con el numero de DNI");
+                    dato = 0;
             }
             return dato;
         }
 
+        /// <summary>
+        /// Verifica si el DNI se puede pasar a Integer y que no tenga mas de 8 caracteres
+        /// </summary>
+        /// <param name="nacionalidad"></param>
+        /// <param name="dato"></param>
+        /// <returns>int DNI o DniInvalidoException</returns>
         private int ValidarDNI(ENacionalidad nacionalidad, string dato)
         {
             int aux = 0;
@@ -113,7 +126,7 @@ namespace EntidadesAbstractas
             bool IsValid = true;
             int charToASCII;
 
-            List<int> validos = new List<int>() { 128, 129, 130, 132, 135, 137, 139, 142, 144, 145, 146, 148, 153, 154, 155, 157, 160, 161, 162, 163, 164, 165, 181, 211, 214, 216, 224, 225, 233, 255 };
+            List<int> validos = new List<int>() { 32, 128, 129, 130, 132, 135, 137, 139, 142, 144, 145, 146, 148, 153, 154, 155, 157, 160, 161, 162, 163, 164, 165, 181, 211, 214, 216, 224, 225, 233, 255 };
             for (int i = 0; i < dato.Length; i++)
             {
                 charToASCII = char.ConvertToUtf32(dato, i);
@@ -124,7 +137,7 @@ namespace EntidadesAbstractas
 
                 if (!IsValid) break;
             }
-            
+
             return IsValid ? dato : string.Empty;
         }
     }

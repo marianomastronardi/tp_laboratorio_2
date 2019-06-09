@@ -17,16 +17,19 @@ namespace Entidades
 
         public Profesor()
         {
-            
+
         }
 
-        public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad) : base(id, nombre, apellido, dni, nacionalidad) 
+        public Profesor(int id, string nombre, string apellido, string dni, ENacionalidad nacionalidad) : base(id, nombre, apellido, dni, nacionalidad)
         {
             this.clasesDelDia = new Queue<Universidad.EClases>();
             this._randomClases();
             this._randomClases();
         }
 
+        /// <summary>
+        /// Asigna una Clase al profesor mediante un random
+        /// </summary>
         private void _randomClases()
         {
             switch (random.Next(4))
@@ -48,6 +51,10 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Llama al mismo metodo de la clase base y le agrega los datos de el profesor 
+        /// </summary>
+        /// <returns>Todos los datos del profesor</returns>
         protected override string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
@@ -55,27 +62,41 @@ namespace Entidades
             sb.AppendFormat("CLASE DE {0} POR {1}\n", clase.ToString(), base.MostrarDatos());
             this.clasesDelDia.Enqueue(clase);
             sb.AppendLine(ParticiparEnClase());
-            
+
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Busca las clases asignadas
+        /// </summary>
+        /// <returns>Las clases asignadas al profesor</returns>
         protected override string ParticiparEnClase()
         {
             StringBuilder sb = new StringBuilder();
             Queue<Universidad.EClases>.Enumerator clase = this.clasesDelDia.GetEnumerator();
             sb.AppendLine("CLASES DEL DÍA:");
-            while(clase.MoveNext())
+            while (clase.MoveNext())
             {
                 sb.AppendLine(clase.Current.ToString());
             }
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Llama al metodo MostrarDatos()
+        /// </summary>
+        /// <returns>Devuelve los datos del profesor</returns>
         public override string ToString()
         {
             return this.MostrarDatos();
         }
 
+        /// <summary>
+        /// Verifica si el profesor ya tiene asiganda la clase
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="clase"></param>
+        /// <returns>True en caso de exista</returns>
         public static bool operator ==(Profesor i, Universidad.EClases clase)
         {
             return i.clasesDelDia.Contains(clase);

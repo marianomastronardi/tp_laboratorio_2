@@ -32,6 +32,10 @@ namespace Entidades
             this.jornada = new List<Jornada>();
         }
 
+        /// <summary>
+        /// Genera los datos de las Jornadas de la clase
+        /// </summary>
+        /// <returns>Devuelve las Jornadas con sus Profesores y Alumnos</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -45,16 +49,32 @@ namespace Entidades
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Genera un Archivo Xml con los datos de la Universidad
+        /// </summary>
+        /// <param name="uni"></param>
+        /// <returns>True en caso de que el archivo se genere con éxito</returns>
         public static bool Guardar(Universidad uni)
         {
-            return new Xml<Universidad>().Guardar("Universidad.xml", uni);
+            return new Xml<Universidad>().Guardar(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "\\Universidad.xml", uni);
         }
 
+        /// <summary>
+        /// Llama al Metodo ToString()
+        /// </summary>
+        /// <param name="uni"></param>
+        /// <returns>Devuelve las Jornadas con sus Profesores y Alumnos</returns>
         private static string MostrarDatos(Universidad uni)
         {
             return uni.ToString();
         }
 
+        /// <summary>
+        /// Verifica si el alumno ya existe para la Universidad
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="a"></param>
+        /// <returns>True en caso que existe, sino False</returns>
         public static bool operator ==(Universidad g, Alumno a)
         {
             bool existe = false;
@@ -63,6 +83,12 @@ namespace Entidades
             return existe;
         }
 
+        /// <summary>
+        /// Verifica que el profesor para la Universidad
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="i"></param>
+        /// <returns>True si existe, sino False</returns>
         public static bool operator ==(Universidad g, Profesor i)
         {
             bool existe = false;
@@ -71,6 +97,12 @@ namespace Entidades
             return existe;
         }
 
+        /// <summary>
+        /// Verifica si hay profesores para la Clase
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="clase"></param>
+        /// <returns>El profesor para esa clase</returns>
         public static Profesor operator ==(Universidad u, EClases clase)
         {
             Profesor p = null;
@@ -99,6 +131,12 @@ namespace Entidades
             return (!(g == i));
         }
 
+        /// <summary>
+        /// Verifica si hay algun profesor que no tenga asignada esa clase
+        /// </summary>
+        /// <param name="u"></param>
+        /// <param name="clase"></param>
+        /// <returns>Un profesor o una exception</returns>
         public static Profesor operator !=(Universidad u, EClases clase)
         {
             Profesor p = null;
@@ -117,6 +155,12 @@ namespace Entidades
             return (p);
         }
 
+        /// <summary>
+        /// Agrega una clase a la Universidad
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="clase"></param>
+        /// <returns>el objeto Universidad con la clase agregada</returns>
         public static Universidad operator +(Universidad g, EClases clase)
         {
             Profesor p = new Profesor();
