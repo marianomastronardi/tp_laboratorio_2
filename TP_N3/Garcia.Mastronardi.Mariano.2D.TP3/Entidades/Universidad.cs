@@ -56,7 +56,7 @@ namespace Entidades
         /// <returns>True en caso de que el archivo se genere con éxito</returns>
         public static bool Guardar(Universidad uni)
         {
-            return new Xml<Universidad>().Guardar(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "\\Universidad.xml", uni);
+            return (new Xml<Universidad>().Guardar(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "\\Universidad.xml", uni) ? true : throw new System.Exception("Error al Guardar el Archivo"));
         }
 
         /// <summary>

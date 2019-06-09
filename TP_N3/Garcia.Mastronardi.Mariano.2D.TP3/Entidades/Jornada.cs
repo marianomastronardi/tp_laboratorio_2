@@ -1,6 +1,7 @@
 ﻿using Archivos;
 using System.Collections.Generic;
 using System.Text;
+using ExceptionManager;
 
 namespace Entidades
 {
@@ -47,7 +48,7 @@ namespace Entidades
         /// <returns>True en caso de que se haya creado el archivo</returns>
         public static bool Guardar(Jornada jornada)
         {
-            return new Texto().Guardar(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "\\Jornada.txt", jornada.ToString());
+            return new Texto().Guardar(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "\\Jornada.txt", jornada.ToString()) ? true : throw new ArchivosException(new System.Exception("Error al Guardar el Archivo"));
         }
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace Entidades
         public string Leer()
         {
             string j = string.Empty;
-            new Texto().Leer(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "\\Jornada.txt", out j);
+            if(!(new Texto().Leer(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop) + "\\Jornada.txt", out j) ? true : throw new System.Exception("Error al leer el Archivo")));
             return j;
         }
 
