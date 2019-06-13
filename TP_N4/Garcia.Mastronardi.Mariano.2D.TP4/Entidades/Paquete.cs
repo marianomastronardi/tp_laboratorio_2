@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    public delegate void DelegadoEstado(object sender, EventArgs e);
     public class Paquete : IMostrar<Paquete>
     {
         public enum EEstado
@@ -14,6 +15,8 @@ namespace Entidades
             EnViaje,
             Entregado
         }
+
+        public event DelegadoEstado InformaEstado;
 
         private string direccionEntrega;
         private EEstado estado;
