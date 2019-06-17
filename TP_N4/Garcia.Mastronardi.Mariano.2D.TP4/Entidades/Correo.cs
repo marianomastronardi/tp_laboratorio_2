@@ -32,8 +32,8 @@ namespace Entidades
         public string MostrarDatos(IMostrar<List<Paquete>> elemento)
         {
             StringBuilder sb = new StringBuilder();
-
-            foreach (Paquete p in this.Paquetes)
+            
+            foreach (Paquete p in (List<Paquete>)elemento)
                 sb.AppendFormat("{0} para {1} ({2})\n", p.TrackingID, p.DireccionEntrega, p.Estado.ToString());
             
             return sb.ToString();
@@ -46,8 +46,9 @@ namespace Entidades
                 if (!(c.Paquetes.Contains(p)))
                 {
                     c.Paquetes.Add(p);
-                    Thread t = new Thread(new p.MockCicloVida());
+                    Thread t = new Thread(p.MockCicloVida);
                     c.mockPaquetes.Add(t);
+                    t.Start();
                 }
                 else
                     throw new TrackingIdRepetidoException(string.Format("Paquete repetido: \n{0}", p.ToString()));

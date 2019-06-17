@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Entidades
 {
-    public delegate void DelegadoEstado(object sender, EventArgs e);
+    
     public class Paquete : IMostrar<Paquete>
     {
         public enum EEstado
@@ -15,7 +16,7 @@ namespace Entidades
             EnViaje,
             Entregado
         }
-
+        public delegate void DelegadoEstado(object sender, EventArgs e);
         public event DelegadoEstado InformaEstado;
 
         private string direccionEntrega;
@@ -42,23 +43,34 @@ namespace Entidades
 
         public Paquete(string direccionEntrega, string trackingID)
         {
-
+            this.DireccionEntrega = direccionEntrega;
+            this.TrackingID = trackingID;
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            StringBuilder sb = new StringBuilder();
 
+            sb.AppendFormat("{0} Estado {1}",this.MostrarDatos(this), this.Estado.ToString());
+
+            return sb.ToString();
         }
 
         public void MockCicloVida()
         {
-
+            while(this.Estado != EEstado.Entregado)
+            {
+                Thread.Sleep(4000);
+                this.Estado = this.Estado == EEstado.Ingresado ? EEstado.EnViaje : EEstado.Entregado;
+                DelegadoEstado d = this.InformaEstado;
+                d(this, null);
+            }
+            PaqueteDAO.Insertar(this);            
         }
 
         public string MostrarDatos(IMostrar<Paquete> elemento)
         {
-            return string.Empty;
+            return string.Format("{0} para {1}",((Paquete)elemento).TrackingID, ((Paquete)elemento).DireccionEntrega);
         }
 
         public static bool operator ==(Paquete p1, Paquete p2)
