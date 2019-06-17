@@ -6,6 +6,9 @@ namespace UnitTestTP4
     [TestClass]
     public class UnitTest1
     {
+        /// <summary>
+        /// Verifica que la lista de paquetes se haya instanciado
+        /// </summary>
         [TestMethod]
         public void TestListPaquetesIniciado()
         {
@@ -19,6 +22,9 @@ namespace UnitTestTP4
             Assert.IsNotNull(correo.Paquetes);
         }
 
+        /// <summary>
+        /// devuelve una excepcion en caso de ser dos paquetes con el mismo trackingID
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(TrackingIdRepetidoException))]
         public void TestTrackingRepetido()

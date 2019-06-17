@@ -13,6 +13,11 @@ namespace Entidades
 
         }
 
+        /// <summary>
+        /// Inserta el paquete en la tabla dbo.Paquete
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns>True si se pudo insertar en la BD</returns>
         public static bool Insertar(Paquete p)
         {
             try

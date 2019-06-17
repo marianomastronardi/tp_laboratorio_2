@@ -21,6 +21,9 @@ namespace Entidades
             this.mockPaquetes = new List<Thread>();
         }
 
+        /// <summary>
+        /// Cierra todos los hilos iniciados
+        /// </summary>
         public void FinEntregas()
         {
             if (mockPaquetes != null)
@@ -30,16 +33,27 @@ namespace Entidades
             }
         }
 
-        public string MostrarDatos(IMostrar<List<Paquete>> elemento)
+        /// <summary>
+        /// Muestra la info de todos los paquetes del correo
+        /// </summary>
+        /// <param name="elementos"></param>
+        /// <returns>info paquetes</returns>
+        public string MostrarDatos(IMostrar<List<Paquete>> elementos)
         {
             StringBuilder sb = new StringBuilder();
 
-            foreach (Paquete p in ((Correo)elemento).Paquetes)
+            foreach (Paquete p in ((Correo)elementos).Paquetes)
                 sb.AppendFormat("{0} para {1} ({2})\n", p.TrackingID, p.DireccionEntrega, p.Estado.ToString());
 
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Agrega un paquete a la lista de paquetes del correo
+        /// </summary>
+        /// <param name="c"></param>
+        /// <param name="p"></param>
+        /// <returns>Correo con paquete agregado o exception</returns>
         public static Correo operator +(Correo c, Paquete p)
         {
             if (!(c is null | p is null))

@@ -1,13 +1,7 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entidades;
 
 namespace MainCorreo
 {
@@ -20,25 +14,45 @@ namespace MainCorreo
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Muestra todos los paquetes en el richTextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMostrarTodos_Click(object sender, EventArgs e)
         {
             this.MostrarInformacion<List<Paquete>>((IMostrar<List<Paquete>>)correo);
         }
 
+        /// <summary>
+        /// Menu habilitado para los paquetes entregados que se mostraran en el RichTextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mostrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.MostrarInformacion<Paquete>((IMostrar<Paquete>)lstEstadoEntregado.SelectedItem);
         }
 
+        /// <summary>
+        /// Metodo llamado para mostrar la informacion de/l los/paquetes
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="elemento"></param>
         private void MostrarInformacion<T>(IMostrar<T> elemento)
         {
-            if(elemento != null)
+            if (elemento != null)
             {
                 rtbMostrar.Text += elemento.MostrarDatos(elemento);
                 GuardaString.Guardar(rtbMostrar.Text, Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Paquetes.txt");
             }
         }
 
+        /// <summary>
+        /// Agrega los paquetes ingresados a la lista del correo y luego actualiza el estado hasta llegar a Entregado
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Paquete p = new Paquete(this.txtDireccion.Text, this.mtxtTrackingID.Text);
@@ -48,7 +62,7 @@ namespace MainCorreo
                 correo += p;
                 ActualizarEstados();
             }
-            catch(TrackingIdRepetidoException trEx)
+            catch (TrackingIdRepetidoException trEx)
             {
                 MessageBox.Show(trEx.Message);
             }
@@ -58,6 +72,11 @@ namespace MainCorreo
             }
         }
 
+        /// <summary>
+        /// Invoca al metodo que actualiza el estado del paquete
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void paq_InformaEstado(object sender, EventArgs e)
         {
             if (this.InvokeRequired)
@@ -71,15 +90,18 @@ namespace MainCorreo
             }
         }
 
+        /// <summary>
+        /// Actualiza el estado del paquete hasta llegar a Entregado
+        /// </summary>
         private void ActualizarEstados()
         {
             lstEstadoIngresado.Items.Clear();
             lstEstadoEnViaje.Items.Clear();
             lstEstadoEntregado.Items.Clear();
 
-            foreach(Paquete p in correo.Paquetes)
+            foreach (Paquete p in correo.Paquetes)
             {
-                switch((int)p.Estado)
+                switch ((int)p.Estado)
                 {
                     case (int)Paquete.EEstado.Ingresado:
                         lstEstadoIngresado.Items.Add(p);
