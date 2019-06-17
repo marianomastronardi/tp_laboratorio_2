@@ -22,16 +22,5 @@ namespace MainCorreo.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-74L1GNUL;Initial Catalog=correo-sp-2017;Integrated Security=Tr" +
-            "ue")]
-        public string DbTp4 {
-            get {
-                return ((string)(this["DbTp4"]));
-            }
-        }
     }
 }

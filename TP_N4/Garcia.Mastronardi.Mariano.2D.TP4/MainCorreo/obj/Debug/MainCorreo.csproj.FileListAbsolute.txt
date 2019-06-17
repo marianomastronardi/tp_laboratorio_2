@@ -1,0 +1,14 @@
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\bin\Debug\MainCorreo.exe.config
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\bin\Debug\MainCorreo.exe
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\bin\Debug\MainCorreo.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\bin\Debug\Entidades.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\bin\Debug\Entidades.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\obj\Debug\MainCorreo.csprojAssemblyReference.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\obj\Debug\MainCorreo.FormPpal.resources
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\obj\Debug\MainCorreo.Properties.Resources.resources
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\obj\Debug\MainCorreo.csproj.GenerateResource.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\obj\Debug\MainCorreo.csproj.CoreCompileInputs.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\obj\Debug\MainCorreo.csproj.CopyComplete
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\obj\Debug\MainCorreo.exe
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\obj\Debug\MainCorreo.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\MainCorreo\bin\Debug\Entidades.dll.config

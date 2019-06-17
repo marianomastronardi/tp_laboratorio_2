@@ -51,7 +51,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat("{0} Estado {1}",this.MostrarDatos(this), this.Estado.ToString());
+            sb.AppendFormat("{0} Estado {1}\n",this.MostrarDatos(this), this.Estado.ToString());
 
             return sb.ToString();
         }
@@ -70,7 +70,7 @@ namespace Entidades
 
         public string MostrarDatos(IMostrar<Paquete> elemento)
         {
-            return string.Format("{0} para {1}",((Paquete)elemento).TrackingID, ((Paquete)elemento).DireccionEntrega);
+            return string.Format("{0} para {1}\n",((Paquete)elemento).TrackingID, ((Paquete)elemento).DireccionEntrega);
         }
 
         public static bool operator ==(Paquete p1, Paquete p2)

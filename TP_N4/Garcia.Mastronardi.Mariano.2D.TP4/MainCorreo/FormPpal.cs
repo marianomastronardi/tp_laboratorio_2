@@ -35,12 +35,13 @@ namespace MainCorreo
             if(elemento != null)
             {
                 rtbMostrar.Text += elemento.MostrarDatos(elemento);
+                GuardaString.Guardar(rtbMostrar.Text, Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Paquetes.txt");
             }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Paquete p = new Paquete(txtDireccion.Text, this.mtxtTrackingID.Text);
+            Paquete p = new Paquete(this.txtDireccion.Text, this.mtxtTrackingID.Text);
             p.InformaEstado += this.paq_InformaEstado;
             try
             {
@@ -72,22 +73,22 @@ namespace MainCorreo
 
         private void ActualizarEstados()
         {
-            lstEstadoIngresado.Text = string.Empty;
-            lstEstadoEnViaje.Text = string.Empty;
-            lstEstadoEntregado.Text = string.Empty;
+            lstEstadoIngresado.Items.Clear();
+            lstEstadoEnViaje.Items.Clear();
+            lstEstadoEntregado.Items.Clear();
 
             foreach(Paquete p in correo.Paquetes)
             {
                 switch((int)p.Estado)
                 {
                     case (int)Paquete.EEstado.Ingresado:
-                        lstEstadoIngresado.Text += p.ToString();
+                        lstEstadoIngresado.Items.Add(p);
                         break;
                     case (int)Paquete.EEstado.EnViaje:
-                        lstEstadoEnViaje.Text += p.ToString();
+                        lstEstadoEnViaje.Items.Add(p);
                         break;
                     case (int)Paquete.EEstado.Entregado:
-                        lstEstadoEntregado.Text += p.ToString();
+                        lstEstadoEntregado.Items.Add(p);
                         break;
                     default:
                         break;
@@ -98,6 +99,11 @@ namespace MainCorreo
         private void FormPpal_FormClosing(object sender, FormClosingEventArgs e)
         {
             correo.FinEntregas();
+        }
+
+        private void FormPpal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -37,6 +37,8 @@
             this.lblEstadoEnViaje = new System.Windows.Forms.Label();
             this.lblEstadoIngresado = new System.Windows.Forms.Label();
             this.rtbMostrar = new System.Windows.Forms.RichTextBox();
+            this.mostrarToolStripMenuItem = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.guardarPaqueteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblPaquete = new System.Windows.Forms.Label();
             this.lblTrackingID = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
@@ -44,8 +46,8 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
-            this.mostrarToolStripMenuItem = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1.SuspendLayout();
+            this.mostrarToolStripMenuItem.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -65,6 +67,7 @@
             // 
             // lstEstadoEntregado
             // 
+            this.lstEstadoEntregado.ContextMenuStrip = this.mostrarToolStripMenuItem;
             this.lstEstadoEntregado.FormattingEnabled = true;
             this.lstEstadoEntregado.Location = new System.Drawing.Point(409, 38);
             this.lstEstadoEntregado.Name = "lstEstadoEntregado";
@@ -126,6 +129,20 @@
             this.rtbMostrar.TabIndex = 1;
             this.rtbMostrar.Text = "";
             // 
+            // mostrarToolStripMenuItem
+            // 
+            this.mostrarToolStripMenuItem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.guardarPaqueteToolStripMenuItem});
+            this.mostrarToolStripMenuItem.Name = "mostrarToolStripMenuItem";
+            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
+            this.mostrarToolStripMenuItem.Click += new System.EventHandler(this.mostrarToolStripMenuItem_Click);
+            // 
+            // guardarPaqueteToolStripMenuItem
+            // 
+            this.guardarPaqueteToolStripMenuItem.Name = "guardarPaqueteToolStripMenuItem";
+            this.guardarPaqueteToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.guardarPaqueteToolStripMenuItem.Text = "Mostrar";
+            // 
             // lblPaquete
             // 
             this.lblPaquete.AutoSize = true;
@@ -159,7 +176,7 @@
             // mtxtTrackingID
             // 
             this.mtxtTrackingID.Location = new System.Drawing.Point(428, 334);
-            this.mtxtTrackingID.Mask = "__-__-__";
+            this.mtxtTrackingID.Mask = "##-##-##";
             this.mtxtTrackingID.Name = "mtxtTrackingID";
             this.mtxtTrackingID.Size = new System.Drawing.Size(100, 20);
             this.mtxtTrackingID.TabIndex = 9;
@@ -191,17 +208,12 @@
             this.btnMostrarTodos.UseVisualStyleBackColor = true;
             this.btnMostrarTodos.Click += new System.EventHandler(this.btnMostrarTodos_Click);
             // 
-            // mostrarToolStripMenuItem
-            // 
-            this.mostrarToolStripMenuItem.Name = "mostrarToolStripMenuItem";
-            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.mostrarToolStripMenuItem.Click += new System.EventHandler(this.mostrarToolStripMenuItem_Click);
-            // 
             // FormPpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 428);
+            this.ContextMenuStrip = this.mostrarToolStripMenuItem;
             this.Controls.Add(this.btnMostrarTodos);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtDireccion);
@@ -216,8 +228,10 @@
             this.Name = "FormPpal";
             this.Text = "Correo UTN por Mariano.Garcia.Mastronardi.2D";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormPpal_FormClosing);
+            this.Load += new System.EventHandler(this.FormPpal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.mostrarToolStripMenuItem.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,6 +255,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnMostrarTodos;
         private System.Windows.Forms.ContextMenuStrip mostrarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guardarPaqueteToolStripMenuItem;
     }
 }
 

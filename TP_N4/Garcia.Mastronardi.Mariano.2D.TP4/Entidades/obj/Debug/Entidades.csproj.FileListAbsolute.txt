@@ -1,0 +1,7 @@
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\Entidades\bin\Debug\Entidades.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\Entidades\bin\Debug\Entidades.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\Entidades\obj\Debug\Entidades.dll
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\Entidades\obj\Debug\Entidades.pdb
+D:\UTN FRA\1º Año\2doCuatrimestre\LaboratorioII\tp_laboratorio_2\TP_N4\Garcia.Mastronardi.Mariano.2D.TP4\Entidades\bin\Debug\Entidades.dll.config
