@@ -1,4 +1,4 @@
-﻿namespace MainCorreo
+namespace MainCorreo
 {
     partial class FormPpal
     {
@@ -176,7 +176,7 @@
             // mtxtTrackingID
             // 
             this.mtxtTrackingID.Location = new System.Drawing.Point(488, 334);
-            this.mtxtTrackingID.Mask = "##-##-##";
+            this.mtxtTrackingID.Mask = "##-##-###";
             this.mtxtTrackingID.Name = "mtxtTrackingID";
             this.mtxtTrackingID.Size = new System.Drawing.Size(100, 20);
             this.mtxtTrackingID.TabIndex = 9;
